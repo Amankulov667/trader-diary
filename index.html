@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="manifest" href="./manifest.json">
-    <meta name="theme-color" content="#0f1117">
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#0f1117" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
     <title>Trader Diary v12</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
@@ -1533,14 +1534,14 @@
               <span class="arrow">▼</span>
             </div>
             <div class="lang-dropdown" id="langDropdown">
-              <div
-                class="lang-option active"
-                id="lopt-ky"
-                onclick="setLang('ky')"
-              >
+              <div class="lang-option" id="lopt-ky" onclick="setLang('ky')">
                 <span class="flag">🇰🇬</span><span class="name">Кыргызча</span>
               </div>
-              <div class="lang-option" id="lopt-ru" onclick="setLang('ru')">
+              <div
+                class="lang-option active"
+                id="lopt-ru"
+                onclick="setLang('ru')"
+              >
                 <span class="flag">🇷🇺</span><span class="name">Русский</span>
               </div>
               <div class="lang-option" id="lopt-en" onclick="setLang('en')">
@@ -2593,7 +2594,7 @@
         period: "all",
         editId: null,
         pendingImages: [],
-        lang: "ky",
+        lang: "ru",
       };
       var charts = {};
       var cal = {
@@ -5482,14 +5483,14 @@
       loadTheme();
       visLoad();
       load();
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-       navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('SW registered'))
-      .catch(err => console.log('SW error', err));
-  });
-}
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./sw.js")
+            .then((reg) => console.log("SW registered"))
+            .catch((err) => console.log("SW error", err));
+        });
+      }
     </script>
-    
   </body>
 </html>
